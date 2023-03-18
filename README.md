@@ -1,8 +1,18 @@
 # Pocket-News-App
 Pocket News is a React JS-based news application that utilizes the News API for fetching data.  allows users to browse news articles by category. In addition, Pocket News features top-loading bars and infinite scroll bars. The website also includes a dark and light mode feature, which allows users to customize the appearance of the app.
 
-<------------------------------------------------------------------------Take a look at some of screenshots-------------------------------------------------------------->
+##Features
+- News Coverage
+- Customization
+- Personalization
+- Breaking News Alerts
+- Social Media Integration
+- Mobile Optimization
 
+
+
+
+##Screenshots
 
 ![Screenshot (807)](https://user-images.githubusercontent.com/116311633/224829829-8d9abb5b-da1e-4873-a4d6-b2d7626ba820.png)
 
