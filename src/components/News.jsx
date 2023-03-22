@@ -27,7 +27,7 @@ const News = (props) => {
       day='0'+day;
     }
     let newdate = year + "-" + month + "-" + day;
-    const url =`https://newsapi.org/v2/everything?q=${props.category}&from=${newdate}&language=en&sortBy=publishedAt&apiKey=${props.apiKey}`
+    const url =`https://newsapi.org/v2/everything?q=${props?.category}&from=${newdate}&language=en&sortBy=publishedAt&apiKey=${props?.apiKey}`
     setLoading(true);
     let data = await fetch(url);
     props.setProgress(30);
@@ -40,7 +40,7 @@ const News = (props) => {
   };
 
   useEffect(() => {
-    document.title = `${capitalizeFirstLetter(props.category)} - POCKET`;
+    document.title = `${capitalizeFirstLetter(props?.category)} - POCKET`;
     updateNews();
   }, []);
   const fetchMoreData = async () => {
@@ -58,13 +58,13 @@ const News = (props) => {
       day='0'+day;
     }
     let newdate = year + "-" + month + "-" + day;
-    const url =`https://newsapi.org/v2/everything?q=${props.category}&from=${newdate}&language=en&sortBy=publishedAt&apiKey=${props.apiKey}`
+    const url =`https://newsapi.org/v2/everything?q=${props?.category}&from=${newdate}&language=en&sortBy=publishedAt&apiKey=${props?.apiKey}`
     setPage(page + 1);
     let data = await fetch(url);
     let parsedData = await data.json();
     setLoading(false);
-    setArticles(articles.concat(parsedData.articles));
-    setTotalResults(parsedData.totalResults);
+    setArticles(articles.concat(parsedData?.articles));
+    setTotalResults(parsedData?.totalResults);
   };
 
   return (
@@ -76,14 +76,14 @@ const News = (props) => {
           color: props.mode === "dark" ? "#bbe4e7" : "black",
         }}
       >
-        Pocket-News- Top {capitalizeFirstLetter(props.category)} Headlines
+        Pocket-News- Top {capitalizeFirstLetter(props?.category)} Headlines
       </h1>
       {loading && <Spinner />}
       
       <InfiniteScroll
-        dataLength = { articles.length }
+        dataLength = { articles?.length }
         next={fetchMoreData}
-        hasMore={articles.length !== totalResults}
+        hasMore={articles?.length !== totalResults}
         loader={<Spinner />}
       >
         <div className="container">
