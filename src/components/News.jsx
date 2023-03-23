@@ -66,7 +66,7 @@ const News = (props) => {
     setArticles(articles.concat(parsedData?.articles));
     setTotalResults(parsedData?.totalResults);
   };
-
+  console.log(articles)
   return (
     <>
       <h1
